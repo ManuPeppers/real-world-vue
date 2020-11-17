@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import User from '../views/User.vue'
+import EventCreate from '../views/EventCreate.vue'
+import EventList from '../views/EventList.vue'
+import EventShow from '../views/EventShow.vue'
 
 Vue.use(VueRouter)
 
@@ -19,6 +22,21 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/create',
+    name: 'event-create',
+    component: EventCreate
+  },
+  {
+    path: '/list',
+    name: 'event-list',
+    component: EventList
+  },
+  {
+    path: '/show',
+    name: 'event-show',
+    component: EventShow
   },
   {
     path: '/user/:username',
